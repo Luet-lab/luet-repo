@@ -1,0 +1,9 @@
+image: golang
+prelude:
+- apt-get update
+- apt-get install git
+- git clone https://github.com/mudler/luet
+steps:
+- cd luet && git checkout 0.6 && make build && mv luet /usr/bin/luet
+includes:
+- /usr/bin/luet
