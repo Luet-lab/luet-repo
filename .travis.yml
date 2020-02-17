@@ -8,7 +8,7 @@ go:
 script:
   - make deps
   - curl -LO https://storage.googleapis.com/container-diff/latest/container-diff-linux-amd64 && chmod +x container-diff-linux-amd64 && mkdir -p $HOME/bin && export PATH=$PATH:$HOME/bin && mv container-diff-linux-amd64 $HOME/bin/container-diff
-  - make build-all
+  - LUET=$GOPATH/bin/luet make build-all
 
 deploy:
     provider: pages
