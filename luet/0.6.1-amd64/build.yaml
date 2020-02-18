@@ -4,6 +4,6 @@ prelude:
 - apt-get install git
 - git clone https://github.com/mudler/luet
 steps:
-- cd luet && git checkout 0.6 && make build && mv luet /usr/bin/luet
+- cd luet && git checkout "${PACKAGE_VERSION}" && make build && mv luet /usr/bin/luet
 includes:
 - /usr/bin/luet
