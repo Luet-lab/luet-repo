@@ -1,0 +1,11 @@
+image: golang
+prelude:
+- apt-get update
+- apt-get install git
+- git clone https://github.com/mudler/entities
+steps:
+- cd entities && git checkout "${PACKAGE_VERSION}" && make build && mv entities /usr/bin/entities
+- cp -rfv /usr/bin/entities /usr/bin/luet-entities
+includes:
+- /usr/bin/entities
+- /usr/bin/luet-entities
