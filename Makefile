@@ -53,7 +53,6 @@ create-repo:
     --descr "Luet official repository" \
     --urls "http://localhost:8000" \
     --tree-compression gzip \
-    --tree-path tree.tar \
     --type http
 
 .PHONY: serve-repo
