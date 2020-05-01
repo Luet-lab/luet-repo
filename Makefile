@@ -58,3 +58,8 @@ create-repo:
 .PHONY: serve-repo
 serve-repo:
 	LUET_NOLOCK=true $(LUET) serve-repo --port 8000 --dir $(ROOT_DIR)/build
+
+.PHONY: auto-bump
+auto-bump:
+	$(ROOT_DIR)/scripts/auto-bump.sh
+
