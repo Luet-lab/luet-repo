@@ -55,7 +55,7 @@ for i in $(echo "$PKG_LIST" | jq -r '.packages[].path'); do
     if [ -n "$LATEST_TAG" ] && [ $LATEST_TAG != "$STRIPPED_PACKAGE_VERSION" ] ; then
         echo "Bumping spec version of $PACKAGE_CATEGORY/$PACKAGE_NAME to $LATEST_TAG"
 
-        BRANCH_NAME="bump_${PACKAGE_NAME}_${PACKAGE_VERSION}"
+        BRANCH_NAME="bump_${PACKAGE_NAME}_${PACKAGE_CATEGORY}"
         if [ "${AUTO_GIT}" == "true" ]; then
             git branch -D $BRANCH_NAME
             git checkout -b $BRANCH_NAME
@@ -74,7 +74,7 @@ for i in $(echo "$PKG_LIST" | jq -r '.packages[].path'); do
         if [ "${AUTO_GIT}" == "true" ]; then
             git add $new_version/
             git rm -r $PACKAGE_PATH
-            git commit -m "Bump $PACKAGE_CATEGORY/PACKAGE_NAME to $LATEST_TAG"
+            git commit -m "Bump $PACKAGE_CATEGORY/$PACKAGE_NAME to $LATEST_TAG"
             git push -f -v origin $BRANCH_NAME
 
             # Branch is ready now to open PR
