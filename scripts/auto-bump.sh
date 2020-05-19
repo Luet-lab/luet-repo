@@ -46,8 +46,8 @@ for i in $(echo "$PKG_LIST" | jq -r '.packages[].path'); do
     VERSION=$STRIPPED_PACKAGE_VERSION
 
     # Best effort: get original package name from labels
-    GITHUB_REPO=$(yq r $PACKAGE_PATH/definition.yaml 'Labels."github.repo"')
-    GITHUB_OWNER=$(yq r $PACKAGE_PATH/definition.yaml 'Labels."github.owner"')
+    GITHUB_REPO=$(yq r $PACKAGE_PATH/definition.yaml 'labels."github.repo"')
+    GITHUB_OWNER=$(yq r $PACKAGE_PATH/definition.yaml 'labels."github.owner"')
     #LATEST_RELEASE=$(curl https://api.github.com/repos/$GITHUB_OWNER/$GITHUB_REPO/releases/latest -s | jq .tag_name -r)
     LATEST_TAG=$(curl https://api.github.com/repos/$GITHUB_OWNER/$GITHUB_REPO/tags -s | jq '.[0].name' -r)
     LATEST_TAG=${LATEST_TAG#v}
