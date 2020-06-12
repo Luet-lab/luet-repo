@@ -1,0 +1,8 @@
+image: alpine
+prelude:
+- apk update
+- apk add make git
+- git clone https://github.com/Luet-lab/extensions
+- cd extensions && git checkout -b build v${PACKAGE_VERSION}
+steps:
+- cd extensions && make install
