@@ -32,7 +32,7 @@ hash yq 2>/dev/null || {
 }
 
 # Luet tree package list
-PKG_LIST=$(luet tree pkglist --tree $ROOT_DIR/ -o json)
+PKG_LIST=$(luet tree pkglist --tree $ROOT_DIR/packages -o json)
 
 # For each package in the tree, get the path where the spec resides
 # e.g. tree/sabayonlinux.org/acct-group/amavis/0/
