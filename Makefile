@@ -8,8 +8,8 @@ DESTINATION?=$(ROOT_DIR)/output
 TARGET?=targets
 COMPRESSION?=gzip
 CLEAN?=true
-TREE?=./
-BUILD_ARGS?=
+TREE?=./packages
+BUILD_ARGS?=-c conf/luet.yaml
 SUDO?=sudo
 export LUET_BIN?=$(LUET)
 
