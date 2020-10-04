@@ -61,5 +61,5 @@ serve-repo:
 
 .PHONY: auto-bump
 auto-bump:
-	$(ROOT_DIR)/scripts/auto-bump.sh
+	TREE_DIR=$(TREE) $(LUET) autobump-github auto-bump.sh
 
