@@ -9,7 +9,7 @@ TARGET?=targets
 COMPRESSION?=gzip
 CLEAN?=true
 TREE?=./packages
-BUILD_ARGS?=--config conf/luet.yaml
+BUILD_ARGS?= --pull --image-repository mocaccinoos/luetrepo-amd64-cache
 SUDO?=sudo
 export LUET_BIN?=$(LUET)
 
@@ -62,4 +62,3 @@ serve-repo:
 .PHONY: auto-bump
 auto-bump:
 	TREE_DIR=$(TREE) $(LUET) autobump-github auto-bump.sh
-
