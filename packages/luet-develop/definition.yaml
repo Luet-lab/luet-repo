@@ -1,0 +1,6 @@
+category: "system"
+name: "luet-develop"
+version: "0.20201006"
+branch: "develop"
+labels:
+  autobump.strategy: "snapshot"
