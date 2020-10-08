@@ -1,11 +1,11 @@
 image: golang
 prelude:
 - apt-get update
-- apt-get install git upx
+- apt-get install git
 - git clone https://github.com/mudler/luet
 steps:
 - |
   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
-  cd luet && git checkout "${PACKAGE_VERSION}" && make build-small && mv luet /usr/bin/luet
+  cd luet && git checkout "${PACKAGE_VERSION}" && make build && mv luet /usr/bin/luet
 includes:
 - /usr/bin/luet
