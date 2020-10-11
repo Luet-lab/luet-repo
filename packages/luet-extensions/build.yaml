@@ -1,7 +1,7 @@
-image: golang:alpine
+image: golang
 prelude:
-- apk update
-- apk add make git
+- apt-get update
+- apt-get install -y make git
 - git clone https://github.com/Luet-lab/extensions
 - cd extensions && git checkout -b build v${PACKAGE_VERSION}
 steps:
