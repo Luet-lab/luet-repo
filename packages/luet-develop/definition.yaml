@@ -1,6 +1,6 @@
 category: "system"
 name: "luet-develop"
-version: "0.20201011"
+version: "0.20201015"
 branch: "develop"
 labels:
   autobump.strategy: "snapshot"
