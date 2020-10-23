@@ -1,6 +1,6 @@
 category: "system"
 name: "luet-extensions"
-version: "0.7.14"
+version: "0.7.15"
 labels:
   github.repo: "extensions"
   github.owner: "Luet-lab"
