@@ -1,6 +1,6 @@
 category: "system"
 name: "luet-extensions"
-version: "0.8.22"
+version: "0.8.23"
 labels:
   github.repo: "extensions"
   github.owner: "Luet-lab"
