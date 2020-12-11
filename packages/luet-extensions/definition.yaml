@@ -1,5 +1,6 @@
 category: "system"
 name: "luet-extensions"
+description: "Luet extensions package (development version)"
 version: "0.8.24"
 labels:
   github.repo: "extensions"
