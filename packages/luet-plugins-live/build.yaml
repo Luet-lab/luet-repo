@@ -1,0 +1,12 @@
+image: golang
+prelude:
+- apt-get update
+- apt-get install -y make git
+- git clone https://github.com/Luet-lab/plugins
+- mkdir /plugins
+- go get gopkg.in/yaml.v3
+- cd plugins && make build
+package_dir: "/plugins"
+steps:
+- cd plugins && DESTDIR=/plugins make install
+

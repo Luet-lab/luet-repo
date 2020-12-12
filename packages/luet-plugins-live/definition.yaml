@@ -1,0 +1,8 @@
+category: "system"
+name: "luet-plugins-live"
+version: "0.20201212"
+description: "Luet plugins package (development version)"
+labels:
+  github.repo: "plugins"
+  github.owner: "Luet-lab"
+  autobump.strategy: "snapshot"
