@@ -6,3 +6,7 @@ labels:
   github.repo: "plugins"
   github.owner: "Luet-lab"
   autobump.strategy: "snapshot"
+requires:
+  - name: jq
+    category: utils
+    version: ">=0"
