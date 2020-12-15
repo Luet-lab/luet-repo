@@ -1,6 +1,6 @@
 category: "system"
 name: "luet-extensions-live"
-version: "0.8.24"
+version: "0.20201215"
 description: "Luet extensions package (development version)"
 labels:
   github.repo: "extensions"
