@@ -9,7 +9,7 @@ TARGET?=targets
 COMPRESSION?=gzip
 CLEAN?=true
 TREE?=./packages
-BUILD_ARGS?= --pull --image-repository mocaccinoos/luetrepo-amd64-cache --only-target-package
+BUILD_ARGS?= --pull --image-repository quay.io/mocaccinoos/luetrepo-amd64-cache --only-target-package
 SUDO?=sudo
 export LUET_BIN?=$(LUET)
 
