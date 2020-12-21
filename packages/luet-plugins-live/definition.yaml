@@ -1,6 +1,6 @@
 category: "system"
 name: "luet-plugins-live"
-version: "0.20201212+1"
+version: "0.20201221"
 description: "Luet plugins package (development version)"
 labels:
   github.repo: "plugins"
