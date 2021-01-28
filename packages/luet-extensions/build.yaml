@@ -1,4 +1,7 @@
-image: golang
+requires:
+- category: "system"
+  name: "luet"
+  version: ">=0"
 env:
 - BUNDLED_EXTENSIONS="{{.Values.extensions}}"
 prelude:
