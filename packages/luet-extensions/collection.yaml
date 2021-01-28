@@ -1,0 +1,54 @@
+packages:
+- category: "system"
+  name: "luet-extensions"
+  description: "Luet extensions package"
+  version: "0.8.35"
+  live: false
+  labels:
+    github.repo: "extensions"
+    github.owner: "Luet-lab"
+
+  extensions: >-
+        geninitramfs
+        kernel-switcher 
+- category: "system"
+  name: "luet-devkit"
+  description: "Luet devkit package"
+  version: "0.8.35"
+  live: false
+  labels:
+    github.repo: "extensions"
+    github.owner: "Luet-lab"
+
+  extensions: >-
+        remote-exec 
+        autobump-github
+        geniso
+        genimage
+        qa-artefacts
+        package-browser
+        parallel-tools
+        portage-converter
+        portage
+        apkbuildconverter
+- category: "system"
+  name: "luet-migrate-entropy"
+  live: false
+  description: "Luet Entropy migration package"
+  version: "0.8.35"
+  labels:
+    github.repo: "extensions"
+    github.owner: "Luet-lab"
+
+  extensions: >-
+       migrate-entropy
+
+- category: "system"
+  name: "luet-extensions-live"
+  version: "0.20201221"
+  live: true
+  description: "Luet extensions package (development version)"
+  labels:
+    github.repo: "extensions"
+    github.owner: "Luet-lab"
+    autobump.strategy: "snapshot"
