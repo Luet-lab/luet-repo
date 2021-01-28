@@ -1,6 +1,0 @@
-category: "system"
-name: "luet-master"
-version: "0.20201105"
-branch: "master"
-labels:
-  autobump.strategy: "snapshot"
