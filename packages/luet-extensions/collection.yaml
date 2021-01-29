@@ -28,7 +28,6 @@ packages:
         qa-artefacts
         package-browser
         parallel-tools
-        portage-converter
         portage
         apkbuildconverter
 - category: "system"
