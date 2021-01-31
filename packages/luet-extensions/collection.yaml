@@ -22,7 +22,7 @@ packages:
     name: "luet-migrate-entropy"
     live: false
     description: "Luet Entropy migration package"
-    version: "0.9.1"
+    version: "0.9.4"
     labels:
       github.repo: "extensions"
       github.owner: "Luet-lab"
