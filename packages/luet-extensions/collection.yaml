@@ -2,7 +2,7 @@ packages:
   - category: "system"
     name: "luet-extensions"
     description: "Luet extensions package"
-    version: "0.9.9"
+    version: "0.9.13"
     live: false
     labels:
       github.repo: "extensions"
