@@ -1,0 +1,11 @@
+image: golang
+prelude:
+- apt-get update
+- apt-get install -y git upx
+- git clone https://github.com/mudler/luet-makeiso
+steps:
+- |
+  PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+  cd luet-makeiso && git checkout "${PACKAGE_VERSION}" && make build-small && mv luet-makeiso /usr/bin/luet-makeiso
+includes:
+- /usr/bin/luet-makeiso
