@@ -1,0 +1,186 @@
+#!/bin/bash
+set -e
+WORKDIR="${WORKDIR:-$HOME/.local/share/luet}"
+
+export LUET_NOLOCK=true
+
+prepare(){
+    if [ ! -d $WORKDIR ]; then
+        mkdir -p $WORKDIR
+    fi
+}
+
+create() {
+    local box=$1
+    if [ ! -d $WORKDIR/$box ]; then
+        mkdir -p $WORKDIR/$box
+        echo "$box created"
+    else
+        echo "$box already exists"
+    fi
+}
+
+delete() {
+    local box=$1
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+    else
+        rm -rf $WORKDIR/$box
+        echo "$box removed"
+    fi
+}
+
+run() {
+    local box=$1
+    shift
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+        exit 1
+    fi
+
+    luet box exec --rootfs $WORKDIR/$box \
+    --stdin --stdout --stderr --entrypoint /bin/bash $@
+}
+
+install() {
+    local box=$1
+    shift
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+        exit 1
+    fi
+
+    luet install --system-target $WORKDIR/$box --system-dbpath=/luetdb $@
+}
+
+discover() {
+    local box=$1
+    echo $WORKDIR/$box
+}
+
+uninstall() {
+    local box=$1
+    shift
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+        exit 1
+    fi
+
+    luet uninstall --system-target $WORKDIR/$box --system-dbpath=/luetdb $@
+}
+
+upgrade() {
+    local box=$1
+    shift
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+        exit 1
+    fi
+
+    luet upgrade --system-target $WORKDIR/$box --system-dbpath=/luetdb $@
+}
+
+list_files() {
+    local box=$1
+    shift
+    if [ ! -d $WORKDIR/$box ]; then
+        echo "$box not present"
+        exit 1
+    fi 
+    ls -liah $WORKDIR/$box/$@
+}
+
+list() {
+    echo "Luet containers:"
+    for i in $(ls $WORKDIR); do
+        echo ">> $i"
+    done
+}
+
+usage(){
+    echo "luet container
+----
+A simple extension that wraps luet box to handle local boxes.
+This extension is mostly for development, and local debugging.
+
+
+Usage: $cli_name [command] [boxname] <args...>
+Commands:
+  create    Creates a luet container
+  delete    Deletes a luet container
+  run       Runs a command in a luet container
+  install   Installs something into a luet container
+  uninstall Removes something from a luet container
+  upgrade   Upgrades the packages in the luet container
+  ls        List files inside the luet container
+  list      List the available containers
+  pwd       Displays the box location
+  *         Help
+"
+}
+
+prepare
+
+while [ "$#" -gt 0 ]; do
+    case $1 in
+        create)
+            shift 1
+            create $@
+            exit 0
+            ;;
+        delete)
+            shift 1
+            delete $@
+            exit 0
+            ;;
+        run)
+            shift 1
+            run $@
+            exit 0
+            ;;
+        install)
+            shift 1
+            install $@
+            exit 0
+            ;;
+        upgrade)
+            shift 1
+            upgrade $@
+            exit 0
+            ;;
+        uninstall)
+            shift 1
+            uninstall $@
+            exit 0
+            ;;
+        ls)
+            shift 1
+            list_files $@
+            exit 0
+            ;;
+        list)
+            list
+            exit 0
+            ;;
+        pwd)
+            shift 1
+            discover $@
+            exit 0
+            ;;
+        -h)
+            usage
+            exit 0
+            ;;
+        --help)
+            usage
+            exit 0
+            ;;
+        help)
+            usage
+            exit 0
+            ;;
+    esac
+    shift 1
+done
+
+usage

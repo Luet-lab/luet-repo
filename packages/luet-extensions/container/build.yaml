@@ -1,0 +1,8 @@
+image: "alpine"
+prelude:
+- mkdir -p /container/usr/bin
+package_dir: "/container"
+steps:
+- cp -rfv luet-container /container/usr/bin
+- chmod +x /container/usr/bin/luet-container
+
