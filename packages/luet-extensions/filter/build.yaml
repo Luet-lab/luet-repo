@@ -1,0 +1,9 @@
+image: "golang:alpine"
+prelude:
+- mkdir -p /container/usr/bin
+package_dir: "/container"
+steps:
+- CGO_ENABLED=0 go build -o luet-filter ./luet-filter.go
+- cp -rfv luet-filter /container/usr/bin
+- chmod +x /container/usr/bin/luet-filter
+
