@@ -33,7 +33,7 @@ jobs:
         go-version: '^1.14.3' # The Go version to download (if necessary) and use.
     - name: Login to DockerHub Registry
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: echo ${{ secrets.QUAY_PASSWORD }} | docker login -u ${{ secrets.QUAY_USERNAME }} --password-stdin quay.io
+      run: echo ${{ secrets.QUAY_PASSWORD }} | sudo -E docker login -u ${{ secrets.QUAY_USERNAME }} --password-stdin quay.io
 
     - name: Set Push options
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
@@ -43,7 +43,7 @@ jobs:
         PREVIOUS: ${{ github.event.before }}
       run: |
         curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
-        make build-all create-repo
+        sudo -E make build-all create-repo
 
     - name: Deploy GH Pages 🚀
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
