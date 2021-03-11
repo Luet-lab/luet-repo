@@ -9,7 +9,6 @@ COMPRESSION?=gzip
 CLEAN?=true
 TREE?=./packages
 BUILD_ARGS?= --pull --image-repository quay.io/mocaccinoos/luetrepo-amd64-cache --only-target-package
-SUDO?=sudo
 export LUET_BIN?=$(LUET)
 
 .PHONY: all
@@ -22,30 +21,30 @@ deps:
 
 .PHONY: clean
 clean:
-	$(SUDO) rm -rf build/ *.tar *.metadata.yaml
+	rm -rf build/ *.tar *.metadata.yaml
 
 .PHONY: build
 build: clean
 	mkdir -p $(ROOT_DIR)/build
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: build-all
 build-all: clean
 	mkdir -p $(ROOT_DIR)/build
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 	rm -rf $(ROOT_DIR)/build/*.image.tar
 
 .PHONY: rebuild
 rebuild:
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(LUET) build $(BUILD_ARGS) --tree=$(TREE) $(PACKAGES) --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: rebuild-all
 rebuild-all:
-	$(SUDO) $(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
+	$(LUET) build $(BUILD_ARGS) --tree=$(TREE) --all --destination $(ROOT_DIR)/build --backend $(BACKEND) --concurrency $(CONCURRENCY) --compression $(COMPRESSION)
 
 .PHONY: create-repo
 create-repo:
-	$(SUDO) $(LUET) create-repo --tree "$(TREE)" \
+	$(LUET) create-repo --tree "$(TREE)" \
     --output $(ROOT_DIR)/build \
     --packages $(ROOT_DIR)/build \
     --name "luet-official" \
