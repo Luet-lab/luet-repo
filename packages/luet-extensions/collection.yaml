@@ -30,7 +30,7 @@ packages:
       migrate-entropy
   - category: "system"
     name: "luet-extensions-live"
-    version: 0.20210220+4
+    version: 0.20210220+5
     live: true
     description: "Luet extensions package (development version)"
     labels:
