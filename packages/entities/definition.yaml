@@ -1,6 +1,6 @@
 category: "system"
 name: "entities"
-version: "0.3"
+version: "0.4"
 labels:
   github.repo: "entities"
   github.owner: "mudler"
