@@ -1,6 +1,6 @@
 category: "extension"
 name: "makeiso"
-version: "0.2.1"
+version: "0.2.2"
 labels:
   github.repo: "luet-makeiso"
   github.owner: "mudler"
