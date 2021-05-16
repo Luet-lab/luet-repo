@@ -42,9 +42,9 @@ jobs:
       env:
         PREVIOUS: ${{ github.event.before }}
       run: |
-        curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
-        wget https://get.mocaccino.org/luet/luet -O /usr/bin/luet
-        chmod +x /usr/bin/luet
+        #curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
+        sudo wget https://get.mocaccino.org/luet/luet -O /usr/bin/luet
+        sudo chmod +x /usr/bin/luet
         sudo -E make build-all create-repo
 
     - name: Deploy GH Pages 🚀
