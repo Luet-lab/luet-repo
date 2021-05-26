@@ -11,7 +11,7 @@ packages:
   - category: "system"
     name: "luet-devkit"
     description: "Luet devkit package"
-    version: "0.10.0"
+    version: "0.10.1"
     live: false
     labels:
       github.repo: "extensions"
