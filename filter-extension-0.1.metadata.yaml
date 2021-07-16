@@ -1,0 +1,99 @@
+path: /home/runner/work/luet-repo/luet-repo/build/filter-extension-0.1.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - CGO_ENABLED=0 go build -o luet-filter ./luet-filter.go
+  - cp -rfv luet-filter /container/usr/bin
+  - chmod +x /container/usr/bin/luet-filter
+  env: []
+  prelude:
+  - mkdir -p /container/usr/bin
+  image: golang:alpine
+  seed: golang:alpine
+  package:
+    id: 0
+    name: filter
+    version: "0.1"
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet search filter utils
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:30:40.51737224 +0000 UTC m=+940.239750987
+    labels: {}
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: filter
+      version: "0.1"
+      category: extension
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet search filter utils
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: a8361363174a4ee2a350eb1852f54bde0b047cb23d10730b59abbb4ea4a752e9
+      packagehash: 44d04b9720d3e19bce23a7ed9688bd452465ba1832d1054f262480485650eee0
+  package_dir: /container
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: 27bd82be91e52864bd0c7d628090e0f66fabbbd255f3cb58a7d9469127215964
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet-filter
+packagecacheimage: ""

@@ -1,0 +1,169 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-migrate-entropy-system-0.9.17.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd extensions && DESTDIR=/luet-extensions make install
+  env:
+  - BUNDLED_EXTENSIONS="migrate-entropy"
+  prelude:
+  - apt-get update
+  - apt-get install -y make git
+  - git clone https://github.com/Luet-lab/extensions
+  - cd extensions && git checkout -b build v${PACKAGE_VERSION}
+  - mkdir /luet-extensions
+  - go get gopkg.in/yaml.v3
+  - cd extensions && make build
+  image: ""
+  seed: quay.io/mocaccinoos/luetrepo-amd64-cache:ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  package:
+    id: 0
+    name: luet-migrate-entropy
+    version: 0.9.17
+    category: system
+    useflags: []
+    state: ""
+    packagerequires:
+    - id: 0
+      name: luet
+      version: '>=0'
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ""
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet Entropy migration package
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:23:11.867640962 +0000 UTC m=+491.590019509
+    labels:
+      github.owner: Luet-lab
+      github.repo: extensions
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.17.0
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: c43fb00a2e662529eb5bfae88226b065620dd352ed7f52e3ba8d24e220307700
+      packagehash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  - package:
+      id: 0
+      name: luet-migrate-entropy
+      version: 0.9.17
+      category: system
+      useflags: []
+      state: ""
+      packagerequires:
+      - id: 0
+        name: luet
+        version: '>=0'
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: ""
+        labels: {}
+        treedir: ""
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet Entropy migration package
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+      packagehash: ff91ac2b5b8a809b28131561f9f8eaa14092954a4a30cc580bee7858a9dc3a90
+  package_dir: /luet-extensions
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: 09b5e80f2da8b966e957efbc4d8c39f79e2e21562817a7fa3f4d29bd28362db1
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet-migrate-entropy
+packagecacheimage: ""

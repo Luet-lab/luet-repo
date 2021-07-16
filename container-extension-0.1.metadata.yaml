@@ -1,0 +1,98 @@
+path: /home/runner/work/luet-repo/luet-repo/build/container-extension-0.1.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cp -rfv luet-container /container/usr/bin
+  - chmod +x /container/usr/bin/luet-container
+  env: []
+  prelude:
+  - mkdir -p /container/usr/bin
+  image: alpine
+  seed: alpine
+  package:
+    id: 0
+    name: container
+    version: "0.1"
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet container dev extension
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:30:24.614226584 +0000 UTC m=+924.336605231
+    labels: {}
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: container
+      version: "0.1"
+      category: extension
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet container dev extension
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 6004cb0bcbb45575cc7dee3a54beb520f16ff376086aab24028eaaa267f820eb
+      packagehash: 59789d5fb2e2bc00f18472582d7309bbf90d06e11b7e9b0343199f75faede776
+  package_dir: /container
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: 3313afbed17ed5e98a61ad1a8e6de3f3bb7834f5d39ec74c363faf72c82a8354
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet-container
+packagecacheimage: ""

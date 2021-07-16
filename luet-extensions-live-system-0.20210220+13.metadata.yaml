@@ -1,0 +1,169 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-extensions-live-system-0.20210220+13.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd extensions && DESTDIR=/luet-extensions make install
+  env:
+  - BUNDLED_EXTENSIONS=""
+  prelude:
+  - apt-get update
+  - apt-get install -y make git
+  - git clone https://github.com/Luet-lab/extensions
+  - mkdir /luet-extensions
+  - go get gopkg.in/yaml.v3
+  - cd extensions && make build
+  image: ""
+  seed: quay.io/mocaccinoos/luetrepo-amd64-cache:ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  package:
+    id: 0
+    name: luet-extensions-live
+    version: 0.20210220+13
+    category: system
+    useflags: []
+    state: ""
+    packagerequires:
+    - id: 0
+      name: luet
+      version: '>=0'
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ""
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet extensions package (development version)
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:23:46.911960128 +0000 UTC m=+526.634338975
+    labels:
+      autobump.strategy: snapshot
+      github.owner: Luet-lab
+      github.repo: extensions
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.17.0
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: c43fb00a2e662529eb5bfae88226b065620dd352ed7f52e3ba8d24e220307700
+      packagehash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  - package:
+      id: 0
+      name: luet-extensions-live
+      version: 0.20210220+13
+      category: system
+      useflags: []
+      state: ""
+      packagerequires:
+      - id: 0
+        name: luet
+        version: '>=0'
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: ""
+        labels: {}
+        treedir: ""
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet extensions package (development version)
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        autobump.strategy: snapshot
+        github.owner: Luet-lab
+        github.repo: extensions
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+      packagehash: 8e857d398f27eef6496688f3d44e0fdeec251e3bdc8c5bcc32dba1c7810bf5fa
+  package_dir: /luet-extensions
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: 1dbcab28ce46b65c0174e5e82658492107396fead31e9144c343e6bc96e471c7
+sourceassertion: []
+compressiontype: gzip
+files: []
+packagecacheimage: ""

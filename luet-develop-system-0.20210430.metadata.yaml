@@ -1,0 +1,102 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-develop-system-0.20210430.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd luet && git checkout "develop" && make build-small && mv luet /usr/bin/luet
+  env: []
+  prelude:
+  - apt-get update
+  - apt-get install git upx
+  - git clone https://github.com/mudler/luet
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: luet-develop
+    version: "0.20210430"
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:17:41.969158058 +0000 UTC m=+161.691536705
+    labels:
+      autobump.strategy: snapshot
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet-develop
+      version: "0.20210430"
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        autobump.strategy: snapshot
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 2c1db81fb01a705b1c87b6fb78ce321fbf4fe2538a867c12ff6c26a5f0caee08
+      packagehash: f9d6b25f04f4114cc7d75da04626e819a63ad9a54095dee5497e21f9616e8f2e
+  package_dir: ""
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/luet
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: 927c422a018de27c838d5c8715d9eb6cf62dc8c3b60188a593da40084e3179fa
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet
+packagecacheimage: ""

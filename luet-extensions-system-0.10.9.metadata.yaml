@@ -1,0 +1,170 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-extensions-system-0.10.9.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd extensions && DESTDIR=/luet-extensions make install
+  env:
+  - BUNDLED_EXTENSIONS="geninitramfs kernel-switcher "
+  prelude:
+  - apt-get update
+  - apt-get install -y make git
+  - git clone https://github.com/Luet-lab/extensions
+  - cd extensions && git checkout -b build v${PACKAGE_VERSION}
+  - mkdir /luet-extensions
+  - go get gopkg.in/yaml.v3
+  - cd extensions && make build
+  image: ""
+  seed: quay.io/mocaccinoos/luetrepo-amd64-cache:ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  package:
+    id: 0
+    name: luet-extensions
+    version: 0.10.9
+    category: system
+    useflags: []
+    state: ""
+    packagerequires:
+    - id: 0
+      name: luet
+      version: '>=0'
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ""
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet extensions package
+    uri: []
+    license: ""
+    buildtimestamp: 2021-07-16 20:18:23.928349935 +0000 UTC m=+203.650728582
+    labels:
+      github.owner: Luet-lab
+      github.repo: extensions
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.17.0
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: c43fb00a2e662529eb5bfae88226b065620dd352ed7f52e3ba8d24e220307700
+      packagehash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+  - package:
+      id: 0
+      name: luet-extensions
+      version: 0.10.9
+      category: system
+      useflags: []
+      state: ""
+      packagerequires:
+      - id: 0
+        name: luet
+        version: '>=0'
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: ""
+        labels: {}
+        treedir: ""
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet extensions package
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: ff3ec9df351e0fa20595b03bfca36adc358e7d010618cd7154ae9880d242c2aa
+      packagehash: 1ada5441cc650e1368f8cdb5a8146b236c97364d5f52ebc93f848a8c4abaf4fc
+  package_dir: /luet-extensions
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions:
+      options:
+        type: 0
+        concurrency: 0
+      type: ""
+      learnrate: 0
+      discount: 0
+      maxattempts: 0
+      implementation: 0
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+  copy: []
+  join: []
+  requires_final_images: false
+checksums:
+  sha256: d6d787e25a1203b0883b440c52ebe2b154224da204139ff052f9fc5f630e713d
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet-geninitramfs
+- usr/bin/luet-kernel-switcher
+packagecacheimage: ""
