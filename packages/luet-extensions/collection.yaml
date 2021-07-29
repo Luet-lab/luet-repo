@@ -19,6 +19,16 @@ packages:
     extensions: >-
       remote-exec  autobump-github geniso genimage qa-artefacts package-browser parallel-tools portage apkbuildconverter k8s-build-scheduler repo-devkit
   - category: "system"
+    name: "luet-migrate-emerge"
+    live: false
+    description: "Luet Emerge migration package"
+    version: "0.11"
+    labels:
+      github.repo: "extensions"
+      github.owner: "Luet-lab"
+    extensions: >-
+      migrate-emerge
+   - category: "system"
     name: "luet-migrate-entropy"
     live: false
     description: "Luet Entropy migration package"
