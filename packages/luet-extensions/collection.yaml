@@ -28,7 +28,7 @@ packages:
       github.owner: "Luet-lab"
     extensions: >-
       migrate-emerge
-   - category: "system"
+  - category: "system"
     name: "luet-migrate-entropy"
     live: false
     description: "Luet Entropy migration package"
