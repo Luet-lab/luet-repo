@@ -9,7 +9,9 @@ prelude:
 - apt-get install -y make git
 - git clone https://github.com/Luet-lab/extensions
 {{- if not .Values.live }}
-- cd extensions && git checkout -b build v${PACKAGE_VERSION}
+- |
+   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+   cd extensions && git checkout -b build v${PACKAGE_VERSION}
 {{- end }}
 - mkdir /luet-extensions
 - go get gopkg.in/yaml.v3
