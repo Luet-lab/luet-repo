@@ -1,0 +1,11 @@
+image: golang
+package_dir: /{{ .Values.name }}
+prelude:
+- >-
+  apt-get update && apt-get install -y git &&
+  git clone https://github.com/Luet-lab/{{ .Values.name }}.git  &&
+  export PACKAGE_VERSION=${PACKAGE_VERSION%\+*} &&
+  cd {{ .Values.name }} &&
+  git checkout v"${PACKAGE_VERSION}" &&
+  mkdir /{{ .Values.name }}/usr/bin -p &&
+  make build && mv {{ .Values.name }} /{{ .Values.name }}/usr/bin/{{ .Values.name }}
