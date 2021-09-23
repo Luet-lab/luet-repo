@@ -1,0 +1,13 @@
+image: golang
+prelude:
+- apt-get update
+- apt-get install git
+- git clone https://github.com/Luet-lab/package-browser
+steps:
+- mkdir /usr/share/luet-package-browser
+- cd package-browser && git checkout v"${PACKAGE_VERSION}" && make build && mv luet-package-browser /usr/bin/luet-package-browser
+- cp -rfv package-browser/templates/* /usr/share/luet-package-browser/
+includes:
+- /usr/share/luet-package-browser
+- /usr/share/luet-package-browser/.*
+- /usr/bin/luet-package-browser

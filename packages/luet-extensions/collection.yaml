@@ -17,7 +17,7 @@ packages:
       github.repo: "extensions"
       github.owner: "Luet-lab"
     extensions: >-
-      remote-exec  autobump-github geniso genimage qa-artefacts package-browser parallel-tools portage apkbuildconverter k8s-build-scheduler repo-devkit
+      remote-exec  autobump-github geniso genimage qa-artefacts parallel-tools portage apkbuildconverter k8s-build-scheduler repo-devkit
   - category: "system"
     name: "luet-migrate-emerge"
     live: false
