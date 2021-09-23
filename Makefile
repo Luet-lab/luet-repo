@@ -5,7 +5,7 @@ CONCURRENCY?=1
 LUET?=/usr/bin/luet
 export ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 DESTINATION?=$(ROOT_DIR)/output
-COMPRESSION?=gzip
+COMPRESSION?=zstd
 CLEAN?=true
 TREE?=./packages
 BUILD_ARGS?= --pull --image-repository quay.io/mocaccinoos/luetrepo-amd64-cache --only-target-package
@@ -50,7 +50,9 @@ create-repo:
     --name "luet-official" \
     --descr "Luet official repository" \
     --urls "http://localhost:8000" \
-    --tree-compression gzip \
+    --tree-compression $(COMPRESSION) \
+    --tree-filename tree.tar \
+    --meta-compression $(COMPRESSION) \
     --type http
 
 .PHONY: serve-repo
