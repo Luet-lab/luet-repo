@@ -1,6 +1,6 @@
 category: "extension"
 name: "package-browser"
-version: "0.4"
+version: "0.4.1"
 labels:
   github.repo: "package-browser"
   github.owner: "Luet-lab"
