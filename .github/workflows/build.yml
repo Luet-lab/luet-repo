@@ -34,6 +34,8 @@ jobs:
         PREVIOUS: ${{ github.event.before }}
       run: |
         curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
+        curl -L https://github.com/mudler/luet/releases/download/0.19.2/luet-0.19.2-linux-amd64 -o /usr/bin/luet
+        chmod +x /usr/bin/luet
         sudo -E make build-all create-repo
 
     - name: Deploy GH Pages 🚀
