@@ -30,10 +30,9 @@ jobs:
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: echo "BUILD_ARGS=--push --only-target-package --pull --image-repository quay.io/mocaccinoos/luetrepo-amd64-cache" >> $GITHUB_ENV
     - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-      env:
-        PREVIOUS: ${{ github.event.before }}
       run: |
         curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
+        sudo rm -rf /usr/bin/luet
         sudo curl -L https://github.com/mudler/luet/releases/download/0.19.2/luet-0.19.2-linux-amd64 -o /usr/bin/luet
         sudo chmod +x /usr/bin/luet
         sudo -E make build-all create-repo
