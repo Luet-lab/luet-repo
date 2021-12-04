@@ -28,16 +28,16 @@ packages:
       github.owner: "Luet-lab"
     extensions: >-
       migrate-emerge
-  - category: "system"
-    name: "luet-migrate-entropy"
-    live: false
-    description: "Luet Entropy migration package"
-    version: 0.11.8+3
-    labels:
-      github.repo: "extensions"
-      github.owner: "Luet-lab"
-    extensions: >-
-      migrate-entropy
+  # - category: "system"
+  #   name: "luet-migrate-entropy"
+  #   live: false
+  #   description: "Luet Entropy migration package"
+  #   version: 0.11.8+3
+  #   labels:
+  #     github.repo: "extensions"
+  #     github.owner: "Luet-lab"
+  #   extensions: >-
+  #     migrate-entropy
   - category: "system"
     name: "luet-extensions-live"
     version: 0.20210220+21
