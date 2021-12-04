@@ -1,11 +1,18 @@
-image: golang
+image: golang:alpine
 prelude:
-- apt-get update
-- apt-get install -y git upx
+- apk update
+- apk add git
 - git clone https://github.com/mudler/luet
+{{ if eq .Values.name "luet-arm" }}
+env:
+- GOARCH=arm
+- CGO_ENABLED=0
+{{end}}
 steps:
 - |
   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
-  cd luet && git checkout "${PACKAGE_VERSION}" && make build && mv luet /usr/bin/luet
+  cd luet && git checkout "${PACKAGE_VERSION}" -b build && \
+  go build -ldflags="-w -s -X github.com/mudler/luet/cmd.BuildTime=$(date -u '+%Y-%m-%d') -X github.com/mudler/luet/cmd.BuildCommit=$(git rev-parse HEAD)"
+- mv luet /usr/bin/luet
 includes:
 - /usr/bin/luet
