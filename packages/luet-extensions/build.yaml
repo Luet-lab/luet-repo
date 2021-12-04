@@ -1,11 +1,19 @@
+{{ if eq .Values.name "luet-migrate-entropy" }}
+image: "golang"
+{{ else }}
 requires:
 - category: "system"
   name: "luet"
   version: ">=0"
+{{end}}
 env:
 - BUNDLED_EXTENSIONS="{{.Values.extensions}}"
 prelude:
+{{ if eq .Values.name "luet-migrate-entropy" }}
+- apt-get update && apt-get install -y make git
+{{ else }}
 - apk add make git
+{{end}}
 - git clone https://github.com/Luet-lab/extensions
 {{- if not .Values.live }}
 - |
