@@ -12,7 +12,6 @@ steps:
 - |
   PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
   cd luet && git checkout "${PACKAGE_VERSION}" -b build && \
-  go build -ldflags="-w -s -X github.com/mudler/luet/cmd.BuildTime=$(date -u '+%Y-%m-%d') -X github.com/mudler/luet/cmd.BuildCommit=$(git rev-parse HEAD)"
-- mv luet /usr/bin/luet
+  go build -ldflags="-w -s -X github.com/mudler/luet/cmd.BuildTime=$(date -u '+%Y-%m-%d') -X github.com/mudler/luet/cmd.BuildCommit=$(git rev-parse HEAD)" && mv luet /usr/bin/luet
 includes:
 - /usr/bin/luet
