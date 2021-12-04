@@ -1,7 +1,6 @@
-image: golang
+image: golang:alpine
 prelude:
-- apt-get update
-- apt-get install git
+- apk add git make
 - git clone https://github.com/Luet-lab/package-browser
 steps:
 - mkdir /usr/share/luet-package-browser

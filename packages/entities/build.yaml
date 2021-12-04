@@ -1,7 +1,6 @@
-image: golang
+image: golang:alpine
 prelude:
-- apt-get update
-- apt-get install git
+- apk add make git
 - git clone https://github.com/mudler/entities
 steps:
 - cd entities && git checkout "${PACKAGE_VERSION}" && make build && mv entities /usr/bin/entities
