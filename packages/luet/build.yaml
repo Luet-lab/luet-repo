@@ -3,10 +3,11 @@ prelude:
 - apk update
 - apk add git
 - git clone https://github.com/mudler/luet
-{{ if eq .Values.name "luet-arm" }}
+
 env:
-- GOARCH=arm
 - CGO_ENABLED=0
+{{ if eq .Values.name "luet-arm" }}
+- GOARCH=arm
 {{end}}
 steps:
 - |
