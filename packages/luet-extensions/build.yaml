@@ -21,7 +21,6 @@ prelude:
    cd extensions && git checkout -b build v${PACKAGE_VERSION}
 {{- end }}
 - mkdir /luet-extensions
-- go get gopkg.in/yaml.v3
 - cd extensions && make build
 package_dir: "/luet-extensions"
 steps:
