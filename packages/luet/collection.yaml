@@ -1,13 +1,13 @@
 packages:
 - category: "system"
   name: "luet-arm"
-  version: "0.30.3"
+  version: "0.31.0"
   labels:
     github.repo: "luet"
     github.owner: "mudler"
 - category: "system"
   name: "luet"
-  version: "0.30.3"
+  version: "0.31.0"
   labels:
     github.repo: "luet"
     github.owner: "mudler"
