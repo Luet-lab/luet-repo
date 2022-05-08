@@ -46,4 +46,3 @@ packages:
     labels:
       github.repo: "extensions"
       github.owner: "Luet-lab"
-      autobump.strategy: "snapshot"
