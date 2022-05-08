@@ -5,7 +5,6 @@ description: "Luet plugins package (development version)"
 labels:
   github.repo: "plugins"
   github.owner: "Luet-lab"
-  autobump.strategy: "snapshot"
 requires:
   - name: jq
     category: utils
