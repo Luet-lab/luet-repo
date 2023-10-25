@@ -2,7 +2,7 @@ packages:
   - category: "system"
     name: "luet-extensions"
     description: "Luet extensions package"
-    version: 0.11.8+3
+    version: 0.12.0
     live: false
     labels:
       github.repo: "extensions"
@@ -11,7 +11,7 @@ packages:
   - category: "system"
     name: "luet-devkit"
     description: "Luet devkit package"
-    version: 0.11.8+3
+    version: 0.12.0
     live: false
     labels:
       github.repo: "extensions"
@@ -22,7 +22,7 @@ packages:
     name: "luet-migrate-emerge"
     live: false
     description: "Luet Emerge migration package"
-    version: 0.11.8+3
+    version: 0.12.0
     labels:
       github.repo: "extensions"
       github.owner: "Luet-lab"
@@ -32,7 +32,7 @@ packages:
     name: "luet-migrate-entropy"
     live: false
     description: "Luet Entropy migration package"
-    version: 0.11.8+3
+    version: 0.12.0
     labels:
       github.repo: "extensions"
       github.owner: "Luet-lab"
