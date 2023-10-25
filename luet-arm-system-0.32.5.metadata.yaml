@@ -1,0 +1,123 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-arm-system-0.32.5.package.tar.zst
+dependencies: []
+compilespec:
+  steps:
+  - |
+    PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+    cd luet && git checkout "${PACKAGE_VERSION}" -b build && \
+    go build -ldflags="-w -s -X github.com/mudler/luet/cmd.BuildTime=$(date -u '+%Y-%m-%d') -X github.com/mudler/luet/cmd.BuildCommit=$(git rev-parse HEAD)" && mv luet /usr/bin/luet
+  env:
+  - CGO_ENABLED=0
+  - GOARCH=arm
+  prelude:
+  - apk update
+  - apk add git
+  - git clone https://github.com/mudler/luet
+  image: golang:alpine
+  seed: golang:alpine
+  package:
+    id: 0
+    name: luet-arm
+    version: 0.32.5
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:09:44.887773969 +0000 UTC m=+757.213691178
+    labels:
+      github.owner: mudler
+      github.repo: luet
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet-arm
+      version: 0.32.5
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: d41ff9eae210d5833d4726c696b9869782c357f8d41b79292b87104de2581d05
+      packagehash: f0d4135505498f26efa9d0e3c74cfd2dac9016bce0c6041f5365e1c55eb33043
+  package_dir: ""
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/luet
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: c96ff9287e58d68ec5594fe58e004977db3630dd6578ebdf8534f5e064c05348
+sourceassertion: []
+compressiontype: zstd
+files:
+- usr/bin/luet
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: luet-arm
+  version: 0.32.5
+  category: system
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: ""
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels:
+    github.owner: mudler
+    github.repo: luet
+  treedir: ""

@@ -1,0 +1,117 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-portage-converter-extension-0.4.4.package.tar.zst
+dependencies: []
+compilespec:
+  steps: []
+  env: []
+  prelude:
+  - apt-get update && apt-get install -y git && git clone https://github.com/Luet-lab/luet-portage-converter.git  &&
+    export PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && cd luet-portage-converter &&
+    git checkout v"${PACKAGE_VERSION}" && mkdir /luet-portage-converter/usr/bin -p
+    && make build && mv luet-portage-converter /luet-portage-converter/usr/bin/luet-portage-converter
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: luet-portage-converter
+    version: 0.4.4
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:00:08.522852897 +0000 UTC m=+180.848770006
+    labels:
+      github.owner: Luet-lab
+      github.repo: luet-portage-converter
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet-portage-converter
+      version: 0.4.4
+      category: extension
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: Luet-lab
+        github.repo: luet-portage-converter
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 7e533897fa1723c2ba0bec7246bd1beeb1529fe1648b82543258dc33dc6de206
+      packagehash: 277ec60b5c634fdc3cd068a19a1a4a62dbfea7d4be4d7182f4c7b48bb5d8ab27
+  package_dir: /luet-portage-converter
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: 6343ea05d63e57d000e1d9e6c575189dab0dcd09f59cea14da29c8c3e9868598
+sourceassertion: []
+compressiontype: zstd
+files:
+- usr/bin/luet-portage-converter
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: luet-portage-converter
+  version: 0.4.4
+  category: extension
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: ""
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels:
+    github.owner: Luet-lab
+    github.repo: luet-portage-converter
+  treedir: ""

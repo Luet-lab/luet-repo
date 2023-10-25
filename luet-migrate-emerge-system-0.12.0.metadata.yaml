@@ -1,0 +1,183 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-migrate-emerge-system-0.12.0.package.tar.zst
+dependencies: []
+compilespec:
+  steps:
+  - cd extensions && DESTDIR=/luet-extensions make install
+  env:
+  - BUNDLED_EXTENSIONS="migrate-emerge"
+  prelude:
+  - apk add make git
+  - git clone https://github.com/Luet-lab/extensions
+  - |
+    PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+    cd extensions && git checkout -b build v${PACKAGE_VERSION}
+  - mkdir /luet-extensions
+  - cd extensions && make build
+  image: ""
+  seed: quay.io/mocaccinoos/luetrepo-amd64-cache:9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+  package:
+    id: 0
+    name: luet-migrate-emerge
+    version: 0.12.0
+    category: system
+    useflags: []
+    state: ""
+    packagerequires:
+    - id: 0
+      name: luet
+      version: '>=0'
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ""
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet Emerge migration package
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:03:02.567676033 +0000 UTC m=+354.893593242
+    labels:
+      github.owner: Luet-lab
+      github.repo: extensions
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.32.5
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 01c11eb4c5308b874bf1fe09df1ad27fe39c73df8fd38668edfe5adee02360da
+      packagehash: 9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+  - package:
+      id: 0
+      name: luet-migrate-emerge
+      version: 0.12.0
+      category: system
+      useflags: []
+      state: ""
+      packagerequires:
+      - id: 0
+        name: luet
+        version: '>=0'
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: ""
+        labels: {}
+        treedir: ""
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet Emerge migration package
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+      packagehash: 97fc5db778c01b820b93a63b8322da48509465280d17fe8880759ea3fcd42891
+  package_dir: /luet-extensions
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: d48a80212da2d01463a1c2c37ee9c72ba206f3c5494d7e08858e21da3b797c96
+sourceassertion: []
+compressiontype: zstd
+files:
+- usr/bin/luet-migrate-emerge
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: luet-migrate-emerge
+  version: 0.12.0
+  category: system
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: Luet Emerge migration package
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels:
+    github.owner: Luet-lab
+    github.repo: extensions
+  treedir: ""

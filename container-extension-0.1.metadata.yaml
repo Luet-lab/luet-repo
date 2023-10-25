@@ -1,0 +1,110 @@
+path: /home/runner/work/luet-repo/luet-repo/build/container-extension-0.1.package.tar.zst
+dependencies: []
+compilespec:
+  steps:
+  - cp -rfv luet-container /container/usr/bin
+  - chmod +x /container/usr/bin/luet-container
+  env: []
+  prelude:
+  - mkdir -p /container/usr/bin
+  image: alpine
+  seed: alpine
+  package:
+    id: 0
+    name: container
+    version: "0.1"
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet container dev extension
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:07:12.432152248 +0000 UTC m=+604.758069457
+    labels: {}
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: container
+      version: "0.1"
+      category: extension
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet container dev extension
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 881c599bebfbd189ec5e80b2c984119590da2fb581e5e1b9282b4bb21737c6c7
+      packagehash: d7c59dade4462c09bffd4e0a0a4a4a5188647f6ea2e800ef20f7645925048868
+  package_dir: /container
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: 115b8f9c3e6d27e516299c481a6cddb0c5b08cd5985a112b46bf8cc7f7035c1b
+sourceassertion: []
+compressiontype: zstd
+files:
+- usr/bin/luet-container
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: container
+  version: "0.1"
+  category: extension
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: Luet container dev extension
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels: {}
+  treedir: ""

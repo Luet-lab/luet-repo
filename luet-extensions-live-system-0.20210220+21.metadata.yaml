@@ -1,0 +1,179 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-extensions-live-system-0.20210220+21.package.tar.zst
+dependencies: []
+compilespec:
+  steps:
+  - cd extensions && DESTDIR=/luet-extensions make install
+  env:
+  - BUNDLED_EXTENSIONS=""
+  prelude:
+  - apk add make git
+  - git clone https://github.com/Luet-lab/extensions
+  - mkdir /luet-extensions
+  - cd extensions && make build
+  image: ""
+  seed: quay.io/mocaccinoos/luetrepo-amd64-cache:9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+  package:
+    id: 0
+    name: luet-extensions-live
+    version: 0.20210220+21
+    category: system
+    useflags: []
+    state: ""
+    packagerequires:
+    - id: 0
+      name: luet
+      version: '>=0'
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels: {}
+      treedir: ""
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet extensions package (development version)
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:07:08.92837319 +0000 UTC m=+601.254290299
+    labels:
+      github.owner: Luet-lab
+      github.repo: extensions
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.32.5
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 01c11eb4c5308b874bf1fe09df1ad27fe39c73df8fd38668edfe5adee02360da
+      packagehash: 9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+  - package:
+      id: 0
+      name: luet-extensions-live
+      version: 0.20210220+21
+      category: system
+      useflags: []
+      state: ""
+      packagerequires:
+      - id: 0
+        name: luet
+        version: '>=0'
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: ""
+        labels: {}
+        treedir: ""
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: Luet extensions package (development version)
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: 9a2d63c5fbe552a3fe23b846e452250a019d30e61f377f78f8840d583c082d15
+      packagehash: 765be23aa7c62925fe4b57e6e0b179045fd342ceaf409dfed6c45c061a7c11dc
+  package_dir: /luet-extensions
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes: []
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: 46995db4b389b894d512d6d1114535e02adf710a54ca68837fead903aef5c022
+sourceassertion: []
+compressiontype: zstd
+files: []
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: luet-extensions-live
+  version: 0.20210220+21
+  category: system
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: Luet extensions package (development version)
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels:
+    github.owner: Luet-lab
+    github.repo: extensions
+  treedir: ""

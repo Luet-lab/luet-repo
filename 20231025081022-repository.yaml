@@ -1,0 +1,25 @@
+description: Luet official repository
+enable: true
+index: []
+last_update: "1698221422"
+name: luet-official
+repo_files:
+  compilertree:
+    checksums:
+      sha256: 11156ee612f472c91cb8e9976c547cfc1337c172eda717733c0cf86332ff2683
+    compressiontype: gzip
+    filename: 20231025081022-compilertree.tar.gz
+  meta:
+    checksums:
+      sha256: 8fddd62aa1e1e814438149ef76bff46d27328f2871122e248f40173bdf962cb6
+    compressiontype: zstd
+    filename: 20231025081022-repository.meta.yaml.tar.zst
+  tree:
+    checksums:
+      sha256: a9f328f2a5714c9a47a2767d3223219c54fc105dd6f147aa4785b8051028e875
+    compressiontype: zstd
+    filename: 20231025081022-tree.tar.zst
+revision: 1
+type: http
+urls:
+- http://localhost:8000

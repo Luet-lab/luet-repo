@@ -1,0 +1,120 @@
+path: /home/runner/work/luet-repo/luet-repo/build/makeiso-extension-0.3.8.package.tar.zst
+dependencies: []
+compilespec:
+  steps:
+  - |
+    PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+    cd luet-makeiso && git checkout "${PACKAGE_VERSION}" && make build-small && mv luet-makeiso /usr/bin/luet-makeiso
+  env: []
+  prelude:
+  - apt-get update
+  - apt-get install -y git upx
+  - git clone https://github.com/mudler/luet-makeiso
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: makeiso
+    version: 0.3.8
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: 2023-10-25 08:08:58.863540174 +0000 UTC m=+711.189457283
+    labels:
+      github.owner: mudler
+      github.repo: luet-makeiso
+    treedir: ./packages
+  sourceassertion:
+  - package:
+      id: 0
+      name: makeiso
+      version: 0.3.8
+      category: extension
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      provides: []
+      hidden: false
+      annotations: {}
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      buildtimestamp: ""
+      labels:
+        github.owner: mudler
+        github.repo: luet-makeiso
+      treedir: ./packages
+    value: true
+    hash:
+      buildhash: e5f93ea8a1a6637a7642e3511d50a40ced01cb9f22673b01c6b229ea4b9c6d9b
+      packagehash: 6b9c866ccaea1d54c736d0a18664e741ecd0d53251216cbd8a25968db12baeb9
+  package_dir: ""
+  retrieve: []
+  outputpath: /home/runner/work/luet-repo/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/luet-makeiso
+  excludes: []
+  buildoptions:
+    pushimagerepository: quay.io/mocaccinoos/luetrepo-amd64-cache
+    pullimagerepository:
+    - luet/cache
+    pullfirst: false
+    keepimg: false
+    push: false
+    concurrency: 0
+    compressiontype: ""
+    wait: false
+    onlydeps: false
+    nodeps: false
+    solveroptions: {}
+    buildvaluesfile: []
+    buildvalues:
+    - {}
+    packagetargetonly: false
+    rebuild: false
+    backendargs: []
+    backendtype: ""
+    templatesfolder: []
+    context: null
+  copy: []
+  requires_final_images: false
+checksums:
+  sha256: 0d413926a75b1307646cfaaea47e4a5159c74ed3ed52dd70668424258b46cc90
+sourceassertion: []
+compressiontype: zstd
+files:
+- usr/bin/luet-makeiso
+packagecacheimage: ""
+runtime:
+  id: 0
+  name: makeiso
+  version: 0.3.8
+  category: extension
+  useflags: []
+  state: ""
+  packagerequires: []
+  packageconflicts: []
+  provides: []
+  hidden: false
+  annotations: {}
+  path: ""
+  description: ""
+  uri: []
+  license: ""
+  buildtimestamp: ""
+  labels:
+    github.owner: mudler
+    github.repo: luet-makeiso
+  treedir: ""
