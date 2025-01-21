@@ -38,11 +38,11 @@ packages:
       github.owner: "Luet-lab"
     extensions: >-
       migrate-entropy
-  - category: "system"
-    name: "luet-extensions-live"
-    version: 0.20210220+21
-    live: true
-    description: "Luet extensions package (development version)"
-    labels:
-      github.repo: "extensions"
-      github.owner: "Luet-lab"
+#  - category: "system"
+#    name: "luet-extensions-live"
+#    version: 0.20210220+21
+#    live: true
+#    description: "Luet extensions package (development version)"
+#    labels:
+#      github.repo: "extensions"
+#      github.owner: "Luet-lab"
