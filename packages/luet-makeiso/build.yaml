@@ -1,7 +1,6 @@
-image: golang
+image: golang:alpine
 prelude:
-- apt-get update
-- apt-get install -y git upx-ucl
+- apk add git upx make
 - git clone https://github.com/mudler/luet-makeiso
 steps:
 - |
