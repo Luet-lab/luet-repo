@@ -1,7 +1,7 @@
 image: golang
 prelude:
 - apt-get update
-- apt-get install -y git upx
+- apt-get install -y git upx-ucl
 - git clone https://github.com/mudler/luet-makeiso
 steps:
 - |
