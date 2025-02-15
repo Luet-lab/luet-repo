@@ -1,0 +1,119 @@
+path: /home/runner/work/luet-repo/luet-repo/build/filter-extension-0.1.package.tar.zst
+dependencies: []
+compilespec:
+    steps:
+        - CGO_ENABLED=0 go build -o luet-filter ./luet-filter.go
+        - cp -rfv luet-filter /container/usr/bin
+        - chmod +x /container/usr/bin/luet-filter
+    env: []
+    prelude:
+        - mkdir -p /container/usr/bin
+    image: golang:alpine
+    seed: golang:alpine
+    package:
+        id: 0
+        name: filter
+        version: "0.1"
+        category: extension
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: Luet search filter utils
+        uri: []
+        license: ""
+        buildtimestamp: 2025-02-15 16:07:43.397516081 +0000 UTC m=+506.173778050
+        labels: {}
+        treedir: ./packages
+        origindockerfile: ""
+    sourceassertion:
+        - package:
+            id: 0
+            name: filter
+            version: "0.1"
+            category: extension
+            useflags: []
+            state: ""
+            packagerequires: []
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: Luet search filter utils
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels: {}
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 18fcb4f6af31a04bf0ec9a0b150e8cef6de0202d509fda86928a524cb04a6a0d
+            packagehash: 1b535cec12d167a6139dcb88a52df73cfc0f9d33b683ad54341c539e1c194368
+    package_dir: /container
+    retrieve: []
+    outputpath: /home/runner/work/luet-repo/luet-repo/build
+    unpack: false
+    includes: []
+    excludes: []
+    buildoptions:
+        pushimagerepository: luet/cache
+        pullimagerepository:
+            - luet/cache
+        pullfirst: false
+        keepimg: false
+        push: false
+        concurrency: 0
+        compressiontype: ""
+        wait: false
+        onlydeps: false
+        nodeps: false
+        solveroptions: {}
+        buildvaluesfile: []
+        buildvalues:
+            - {}
+        packagetargetonly: false
+        rebuild: false
+        backendargs: []
+        backendtype: ""
+        templatesfolder: []
+        pushfinalimages: false
+        pushfinalimagesforce: false
+        generatefinalimages: false
+        pushfinalimagesrepository: ""
+        runtimedatabase: null
+        context: null
+    copy: []
+    requires_final_images: false
+checksums:
+    sha256: 42579c0ddcdbbe2fa667da633d30a78047340f943e034072a7ecd0fd6043964b
+sourceassertion: []
+compressiontype: zstd
+files:
+    - usr/bin/luet-filter
+packagecacheimage: ""
+runtime:
+    id: 0
+    name: filter
+    version: "0.1"
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet search filter utils
+    uri: []
+    license: ""
+    buildtimestamp: ""
+    labels: {}
+    treedir: ""
+    origindockerfile: ""

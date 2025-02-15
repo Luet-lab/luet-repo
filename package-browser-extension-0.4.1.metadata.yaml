@@ -1,0 +1,133 @@
+path: /home/runner/work/luet-repo/luet-repo/build/package-browser-extension-0.4.1.package.tar.zst
+dependencies: []
+compilespec:
+    steps:
+        - mkdir /usr/share/luet-package-browser
+        - cd package-browser && git checkout v"${PACKAGE_VERSION}" && make build && mv luet-package-browser /usr/bin/luet-package-browser
+        - cp -rfv package-browser/templates/* /usr/share/luet-package-browser/
+    env: []
+    prelude:
+        - apk add git make
+        - git clone https://github.com/Luet-lab/package-browser
+    image: golang:alpine
+    seed: golang:alpine
+    package:
+        id: 0
+        name: package-browser
+        version: 0.4.1
+        category: extension
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: 2025-02-15 16:09:13.447020365 +0000 UTC m=+596.223282345
+        labels:
+            github.owner: Luet-lab
+            github.repo: package-browser
+        treedir: ./packages
+        origindockerfile: ""
+    sourceassertion:
+        - package:
+            id: 0
+            name: package-browser
+            version: 0.4.1
+            category: extension
+            useflags: []
+            state: ""
+            packagerequires: []
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: ""
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: Luet-lab
+                github.repo: package-browser
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: ab31b750f11b5c2420afe040b36ec986b47451f8ae759b7c52ff33060894d87e
+            packagehash: be14e47f84712636b1fbf327abef88718148e1a085397ac0ee7be75329fc7df4
+    package_dir: ""
+    retrieve: []
+    outputpath: /home/runner/work/luet-repo/luet-repo/build
+    unpack: false
+    includes:
+        - /usr/share/luet-package-browser
+        - /usr/share/luet-package-browser/.*
+        - /usr/bin/luet-package-browser
+    excludes: []
+    buildoptions:
+        pushimagerepository: luet/cache
+        pullimagerepository:
+            - luet/cache
+        pullfirst: false
+        keepimg: false
+        push: false
+        concurrency: 0
+        compressiontype: ""
+        wait: false
+        onlydeps: false
+        nodeps: false
+        solveroptions: {}
+        buildvaluesfile: []
+        buildvalues:
+            - {}
+        packagetargetonly: false
+        rebuild: false
+        backendargs: []
+        backendtype: ""
+        templatesfolder: []
+        pushfinalimages: false
+        pushfinalimagesforce: false
+        generatefinalimages: false
+        pushfinalimagesrepository: ""
+        runtimedatabase: null
+        context: null
+    copy: []
+    requires_final_images: false
+checksums:
+    sha256: 6d5a2332b70a06574f6ff91abddf1f38373bca73c59b8193a3c2138306ca2b4b
+sourceassertion: []
+compressiontype: zstd
+files:
+    - usr/bin/luet-package-browser
+    - usr/share/luet-package-browser/index.tmpl
+    - usr/share/luet-package-browser/package.tmpl
+    - usr/share/luet-package-browser/packages.tmpl
+    - usr/share/luet-package-browser/repository.tmpl
+packagecacheimage: ""
+runtime:
+    id: 0
+    name: package-browser
+    version: 0.4.1
+    category: extension
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: ""
+    labels:
+        github.owner: Luet-lab
+        github.repo: package-browser
+    treedir: ""
+    origindockerfile: ""

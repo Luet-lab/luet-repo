@@ -1,0 +1,135 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-system-0.36.0.package.tar.zst
+dependencies: []
+compilespec:
+    steps:
+        - |
+          PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+          cd luet && git checkout "${PACKAGE_VERSION}" -b build && \
+          go build -ldflags="-w -s -X github.com/mudler/luet/cmd.BuildTime=$(date -u '+%Y-%m-%d') -X github.com/mudler/luet/cmd.BuildCommit=$(git rev-parse HEAD)" && mv luet /usr/bin/luet
+    env:
+        - CGO_ENABLED=0
+    prelude:
+        - apk update
+        - apk add git
+        - git clone https://github.com/mudler/luet
+    image: golang:alpine
+    seed: golang:alpine
+    package:
+        id: 0
+        name: luet
+        version: 0.36.0
+        category: system
+        useflags: []
+        state: ""
+        packagerequires: []
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: ""
+        uri: []
+        license: ""
+        buildtimestamp: 2025-02-15 16:00:24.743425227 +0000 UTC m=+67.519687216
+        labels:
+            github.owner: mudler
+            github.repo: luet
+        treedir: ./packages
+        origindockerfile: ""
+    sourceassertion:
+        - package:
+            id: 0
+            name: luet
+            version: 0.36.0
+            category: system
+            useflags: []
+            state: ""
+            packagerequires: []
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: ""
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: mudler
+                github.repo: luet
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 6f5549dc2feb8faacd5218d489a7cde4e94b14652f81d18d9c54747fa26a34e0
+            packagehash: 2bea63d84fb25ccc74a9675fa69b781b59c67c1050a8463bd5165ea794853499
+    package_dir: ""
+    retrieve: []
+    outputpath: /home/runner/work/luet-repo/luet-repo/build
+    unpack: false
+    includes:
+        - /usr/bin/luet
+    excludes: []
+    buildoptions:
+        pushimagerepository: luet/cache
+        pullimagerepository:
+            - luet/cache
+        pullfirst: false
+        keepimg: false
+        push: false
+        concurrency: 0
+        compressiontype: ""
+        wait: false
+        onlydeps: false
+        nodeps: false
+        solveroptions: {}
+        buildvaluesfile: []
+        buildvalues:
+            - category: system
+              labels:
+                github.owner: mudler
+                github.repo: luet
+              name: luet
+              version: 0.36.0
+        packagetargetonly: false
+        rebuild: false
+        backendargs: []
+        backendtype: ""
+        templatesfolder: []
+        pushfinalimages: false
+        pushfinalimagesforce: false
+        generatefinalimages: false
+        pushfinalimagesrepository: ""
+        runtimedatabase: null
+        context: null
+    copy: []
+    requires_final_images: false
+checksums:
+    sha256: 50ea2747fc974dc4e62335b321721857b42f8641346c62ef3da968a26686118d
+sourceassertion: []
+compressiontype: zstd
+files:
+    - usr/bin/luet
+packagecacheimage: ""
+runtime:
+    id: 0
+    name: luet
+    version: 0.36.0
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    buildtimestamp: ""
+    labels:
+        github.owner: mudler
+        github.repo: luet
+    treedir: ""
+    origindockerfile: ""

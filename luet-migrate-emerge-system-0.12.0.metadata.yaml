@@ -1,0 +1,202 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-migrate-emerge-system-0.12.0.package.tar.zst
+dependencies: []
+compilespec:
+    steps:
+        - cd extensions && DESTDIR=/luet-extensions make install
+    env:
+        - BUNDLED_EXTENSIONS="migrate-emerge"
+    prelude:
+        - apk add make git
+        - git clone https://github.com/Luet-lab/extensions
+        - |
+          PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+          cd extensions && git checkout -b build v${PACKAGE_VERSION}
+        - mkdir /luet-extensions
+        - cd extensions && make build
+    image: ""
+    seed: luet/cache:2bea63d84fb25ccc74a9675fa69b781b59c67c1050a8463bd5165ea794853499
+    package:
+        id: 0
+        name: luet-migrate-emerge
+        version: 0.12.0
+        category: system
+        useflags: []
+        state: ""
+        packagerequires:
+            - id: 0
+              name: luet
+              version: '>=0'
+              category: system
+              useflags: []
+              state: ""
+              packagerequires: []
+              packageconflicts: []
+              provides: []
+              hidden: false
+              annotations: {}
+              path: ""
+              description: ""
+              uri: []
+              license: ""
+              buildtimestamp: ""
+              labels: {}
+              treedir: ""
+              origindockerfile: ""
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: Luet Emerge migration package
+        uri: []
+        license: ""
+        buildtimestamp: 2025-02-15 16:03:33.704382238 +0000 UTC m=+256.480644217
+        labels:
+            github.owner: Luet-lab
+            github.repo: extensions
+        treedir: ./packages
+        origindockerfile: ""
+    sourceassertion:
+        - package:
+            id: 0
+            name: luet
+            version: 0.36.0
+            category: system
+            useflags: []
+            state: ""
+            packagerequires: []
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: ""
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: mudler
+                github.repo: luet
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 6f5549dc2feb8faacd5218d489a7cde4e94b14652f81d18d9c54747fa26a34e0
+            packagehash: 2bea63d84fb25ccc74a9675fa69b781b59c67c1050a8463bd5165ea794853499
+        - package:
+            id: 0
+            name: luet-migrate-emerge
+            version: 0.12.0
+            category: system
+            useflags: []
+            state: ""
+            packagerequires:
+                - id: 0
+                  name: luet
+                  version: '>=0'
+                  category: system
+                  useflags: []
+                  state: ""
+                  packagerequires: []
+                  packageconflicts: []
+                  provides: []
+                  hidden: false
+                  annotations: {}
+                  path: ""
+                  description: ""
+                  uri: []
+                  license: ""
+                  buildtimestamp: ""
+                  labels: {}
+                  treedir: ""
+                  origindockerfile: ""
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: Luet Emerge migration package
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: Luet-lab
+                github.repo: extensions
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 2bea63d84fb25ccc74a9675fa69b781b59c67c1050a8463bd5165ea794853499
+            packagehash: 65230f45d4525d866e777baaeffe717f0b83409db0ef1161e87989e6c955e67a
+    package_dir: /luet-extensions
+    retrieve: []
+    outputpath: /home/runner/work/luet-repo/luet-repo/build
+    unpack: false
+    includes: []
+    excludes: []
+    buildoptions:
+        pushimagerepository: luet/cache
+        pullimagerepository:
+            - luet/cache
+        pullfirst: false
+        keepimg: false
+        push: false
+        concurrency: 0
+        compressiontype: ""
+        wait: false
+        onlydeps: false
+        nodeps: false
+        solveroptions: {}
+        buildvaluesfile: []
+        buildvalues:
+            - category: system
+              description: Luet Emerge migration package
+              extensions: migrate-emerge
+              labels:
+                github.owner: Luet-lab
+                github.repo: extensions
+              live: false
+              name: luet-migrate-emerge
+              version: 0.12.0
+        packagetargetonly: false
+        rebuild: false
+        backendargs: []
+        backendtype: ""
+        templatesfolder: []
+        pushfinalimages: false
+        pushfinalimagesforce: false
+        generatefinalimages: false
+        pushfinalimagesrepository: ""
+        runtimedatabase: null
+        context: null
+    copy: []
+    requires_final_images: false
+checksums:
+    sha256: 74af2f2ca897e5a2bbd0b4a6d70314afbb53036bbb7fbc14893797b8141224e2
+sourceassertion: []
+compressiontype: zstd
+files:
+    - usr/bin/luet-migrate-emerge
+packagecacheimage: ""
+runtime:
+    id: 0
+    name: luet-migrate-emerge
+    version: 0.12.0
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet Emerge migration package
+    uri: []
+    license: ""
+    buildtimestamp: ""
+    labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+    treedir: ""
+    origindockerfile: ""
