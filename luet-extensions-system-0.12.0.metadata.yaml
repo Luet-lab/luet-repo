@@ -1,0 +1,203 @@
+path: /home/runner/work/luet-repo/luet-repo/build/luet-extensions-system-0.12.0.package.tar.zst
+dependencies: []
+compilespec:
+    steps:
+        - cd extensions && DESTDIR=/luet-extensions make install
+    env:
+        - BUNDLED_EXTENSIONS="geninitramfs kernel-switcher "
+    prelude:
+        - apk add make git
+        - git clone https://github.com/Luet-lab/extensions
+        - |
+          PACKAGE_VERSION=${PACKAGE_VERSION%\+*} && \
+          cd extensions && git checkout -b build v${PACKAGE_VERSION}
+        - mkdir /luet-extensions
+        - cd extensions && make build
+    image: ""
+    seed: luet/cache:70405ef7b9b5acebf74b2fc550bbab68a791894b529c983a96ee9ef4667283e0
+    package:
+        id: 0
+        name: luet-extensions
+        version: 0.12.0
+        category: system
+        useflags: []
+        state: ""
+        packagerequires:
+            - id: 0
+              name: luet
+              version: '>=0'
+              category: system
+              useflags: []
+              state: ""
+              packagerequires: []
+              packageconflicts: []
+              provides: []
+              hidden: false
+              annotations: {}
+              path: ""
+              description: ""
+              uri: []
+              license: ""
+              buildtimestamp: ""
+              labels: {}
+              treedir: ""
+              origindockerfile: ""
+        packageconflicts: []
+        provides: []
+        hidden: false
+        annotations: {}
+        path: ""
+        description: Luet extensions package
+        uri: []
+        license: ""
+        buildtimestamp: 2026-03-04 20:29:15.156287596 +0000 UTC m=+684.109270712
+        labels:
+            github.owner: Luet-lab
+            github.repo: extensions
+        treedir: ./packages
+        origindockerfile: ""
+    sourceassertion:
+        - package:
+            id: 0
+            name: luet
+            version: 0.36.4
+            category: system
+            useflags: []
+            state: ""
+            packagerequires: []
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: ""
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: mudler
+                github.repo: luet
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 1aab524044ca8c03993ebc35538033c7d636da8455baea45cfa10639f489c967
+            packagehash: 70405ef7b9b5acebf74b2fc550bbab68a791894b529c983a96ee9ef4667283e0
+        - package:
+            id: 0
+            name: luet-extensions
+            version: 0.12.0
+            category: system
+            useflags: []
+            state: ""
+            packagerequires:
+                - id: 0
+                  name: luet
+                  version: '>=0'
+                  category: system
+                  useflags: []
+                  state: ""
+                  packagerequires: []
+                  packageconflicts: []
+                  provides: []
+                  hidden: false
+                  annotations: {}
+                  path: ""
+                  description: ""
+                  uri: []
+                  license: ""
+                  buildtimestamp: ""
+                  labels: {}
+                  treedir: ""
+                  origindockerfile: ""
+            packageconflicts: []
+            provides: []
+            hidden: false
+            annotations: {}
+            path: ""
+            description: Luet extensions package
+            uri: []
+            license: ""
+            buildtimestamp: ""
+            labels:
+                github.owner: Luet-lab
+                github.repo: extensions
+            treedir: ./packages
+            origindockerfile: ""
+          value: true
+          hash:
+            buildhash: 70405ef7b9b5acebf74b2fc550bbab68a791894b529c983a96ee9ef4667283e0
+            packagehash: cfd568bcf4d2deb434d1e32847400ab5ca58e39e611ec4f0ec1613aa12bd5545
+    package_dir: /luet-extensions
+    retrieve: []
+    outputpath: /home/runner/work/luet-repo/luet-repo/build
+    unpack: false
+    includes: []
+    excludes: []
+    buildoptions:
+        pushimagerepository: luet/cache
+        pullimagerepository:
+            - luet/cache
+        pullfirst: false
+        keepimg: false
+        push: false
+        concurrency: 0
+        compressiontype: ""
+        wait: false
+        onlydeps: false
+        nodeps: false
+        solveroptions: {}
+        buildvaluesfile: []
+        buildvalues:
+            - category: system
+              description: Luet extensions package
+              extensions: 'geninitramfs kernel-switcher '
+              labels:
+                github.owner: Luet-lab
+                github.repo: extensions
+              live: false
+              name: luet-extensions
+              version: 0.12.0
+        packagetargetonly: false
+        rebuild: false
+        backendargs: []
+        backendtype: ""
+        templatesfolder: []
+        pushfinalimages: false
+        pushfinalimagesforce: false
+        generatefinalimages: false
+        pushfinalimagesrepository: ""
+        runtimedatabase: null
+        context: null
+    copy: []
+    requires_final_images: false
+checksums:
+    sha256: 8967f1b0e91be1781c7404af49fe9ead909c9b847eb1a39f4ccd9554639f664a
+sourceassertion: []
+compressiontype: zstd
+files:
+    - usr/bin/luet-geninitramfs
+    - usr/bin/luet-kernel-switcher
+packagecacheimage: ""
+runtime:
+    id: 0
+    name: luet-extensions
+    version: 0.12.0
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    provides: []
+    hidden: false
+    annotations: {}
+    path: ""
+    description: Luet extensions package
+    uri: []
+    license: ""
+    buildtimestamp: ""
+    labels:
+        github.owner: Luet-lab
+        github.repo: extensions
+    treedir: ""
+    origindockerfile: ""
